@@ -1,4 +1,6 @@
 {
-  "name": "elementsProxy",
-  "version": 1.0.0
+  "name": "elementsproxy",
+  "version": "1.0.0",
+  "license": "MIT",
+  "description": "Simple direct access to any element with an id."
 }
