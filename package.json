@@ -7,5 +7,6 @@
     "type": "git",
     "url": "https://github.com/jfbrennan/elementsproxy"
   },
+  "type": "module",
   "main": "index.js"
 }
