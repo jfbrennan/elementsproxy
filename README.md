@@ -2,14 +2,15 @@
 Directly access any element with an id:
 ```html
 <div id="myId">Hi</div>
+
 <script>
   const elements = elementsProxy();
   elements.myId.textContent; // "Hi"
 </script>
 ```
-Under the hood it's a function that returns a Proxy object. The Proxy looks up the element with `getElementById` and caches it as a property on the returned object.
+This function returns a Proxy object. When a property is accessed on that object, the Proxy takes the property name and uses `getElementByIdI()` to find an element with an id of the same name. It then caches the element on the returned object for direct and instant access.
 ## Why?
-Because `document.all` is unreliable and sometimes `document.getElementById()` gets messy:
+Because `document.all` is unreliable and `document.getElementById()` gets messy:
 ```javascript
 // Create lots of references to all the elements you need
 const a = document.getElementById('a');
@@ -56,10 +57,15 @@ elements.b.classList.toggle('flex-col');
 elements.c.addEventListener('click', callback)
 ```
 ## Install
-It's only a few lines of code, so you could just copy-paste index.js into your app or install it:
-```
+Don't bother! It's only a few lines of code, just copy-paste `index.js` into your app and be done. Or install it:
+```html
 <script src="https://unpkg.com/elementsproxy@1.0.0/index.js"></script>
+```
+```javascript
 import elementsProxy from 'https://unpkg.com/elementsproxy@1.0.0/index.js';
+```
+```
+npm install elementsproxy
 import elementsProxy from 'elementsproxy';
 ```
 
