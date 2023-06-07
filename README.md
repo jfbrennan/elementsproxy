@@ -1,9 +1,11 @@
 # Elements Proxy
-Directly access any element with an id:
+Direct access to any HTMLElement with an ID:
 ```html
 <div id="myId">Hi</div>
 
 <script>
+  import elementsProxy from 'https://unpkg.com/elementsproxy@1.1.0';
+
   const elements = elementsProxy();
   elements.myId.textContent; // "Hi"
 </script>
@@ -57,16 +59,15 @@ elements.b.classList.toggle('flex-col');
 elements.c.addEventListener('click', callback)
 ```
 ## Install
-Don't bother! It's only a few lines of code, just copy-paste `index.js` into your app and be done. Or install it:
-```html
-<script src="https://unpkg.com/elementsproxy@1.0.0/index.js"></script>
-```
+Don't bother! It's only a few lines of code, just copy-paste `index.js` into your app and be done. 
+
+Or import it:
 ```javascript
-import elementsProxy from 'https://unpkg.com/elementsproxy@1.0.0/index.js';
+import elementsProxy from 'https://unpkg.com/elementsproxy@1.1.0';
 ```
+Or install:
 ```
 npm install elementsproxy
-import elementsProxy from 'elementsproxy';
 ```
 
 ## Requirements

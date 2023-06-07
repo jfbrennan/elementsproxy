@@ -1,12 +1,16 @@
-export default function() {
+/**
+ * Proxy object that uses `getElementById` to look up an element with an id matching the
+ * accessed property name and stores the element as a property on the returned object.
+ * @typedef {string} elementId
+ * @returns {Object.<elementId, HTMLElement>}
+ */
+export default function elementsProxy() {
   return new Proxy({}, {
-    get(target, prop) {
-      // Do the lookup and cache it for subsequent access.
-      if (!target[prop]) {
-        // Element id becomes a property with the element as its value, target.foo -> <div id="foo">
-        target[prop] = document.getElementById(prop);
+    get(target, elementId) {
+      if (!target[elementId]) {
+        target[elementId] = document.getElementById(elementId);
       }
-      return target[prop];
+      return target[elementId];
     }
   })
 }
