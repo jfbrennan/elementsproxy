@@ -1,6 +1,10 @@
 {
   "name": "elementsproxy",
   "version": "1.0.0",
+  "description": "Simple direct access to any element with an id.",
   "license": "MIT",
-  "description": "Simple direct access to any element with an id."
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jfbrennan/elementsproxy"
+  }
 }
