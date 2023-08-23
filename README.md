@@ -10,7 +10,7 @@ Direct access to any HTMLElement with an ID:
   elements.myId.textContent; // "Hi"
 </script>
 ```
-This function returns a Proxy object. When a property is accessed on that object, the Proxy takes the property name and uses `getElementByIdI()` to find an element with an id of the same name. It then caches the element on the returned object for direct and instant access.
+This function returns a Proxy object. When a property is accessed on that object, the Proxy takes the property name and uses `getElementById()` to find an element with an id of the same name. It then caches the element on the returned object for direct and instant access. If an element is not found, `getElementById()` returns `null` which is the value saved on the proxy object. However, subsequent access to properties with a nullish value will always attempt `getElementById()` until an element is found and cached.
 ## Why?
 Because `document.all` is unreliable and `document.getElementById()` gets messy:
 ```javascript
