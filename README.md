@@ -14,7 +14,7 @@ This function returns a Proxy object. When a property is accessed on that object
 ## Why?
 Because `document.all` is unreliable and `document.getElementById()` gets messy:
 ```javascript
-// Create lots of references to all the elements you need
+// You have to do tons of explicit lookups and create variables for all the elements you'll need
 const a = document.getElementById('a');
 const b = document.getElementById('b');
 const c = document.getElementById('c');
@@ -34,7 +34,7 @@ c.addEventListener('click', callback);
 // and so on...
 
 // Or worse:
-// Repeated use of the id string, wasted lookups, noisy code
+// Repeated use of the id, wasted lookups, and noisy code
 if (x > y) {
   document.getElementById('a').textConent = 'Hello world';
   document.getElementById('a').hidden = false;
