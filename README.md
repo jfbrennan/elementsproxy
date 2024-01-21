@@ -2,12 +2,14 @@
 Get direct access to any HTMLElement with an ID:
 ```html
 <div id="myId">Hi</div>
+<div id="myOtherId">Other</div>
 
 <script>
   import elementsProxy from 'https://unpkg.com/elementsproxy@1.1.0';
 
   const elements = elementsProxy();
-  elements.myId.textContent; // "Hi"
+  elements.myId.textContent = 'Bye';
+  elements.myOtherId.hidden = true;
 </script>
 ```
 This function returns a Proxy object. When a property is accessed on that object, the Proxy takes the property name and uses `getElementById()` to find an element with an id of the same name. It then caches a reference to that element on the returned object for direct and instant access. If an element is not found, `getElementById()` returns `null` which is the value saved for that property. However, subsequent access to properties with no element will attempt `getElementById()` again until an element is found and cached.
