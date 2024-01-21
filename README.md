@@ -1,5 +1,5 @@
 # Elements Proxy
-Direct access to any HTMLElement with an ID:
+Get direct access to any HTMLElement with an ID:
 ```html
 <div id="myId">Hi</div>
 
